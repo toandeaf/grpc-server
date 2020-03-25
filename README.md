@@ -1,16 +1,22 @@
-# Getting Started
+# Basic Spring Boot Server configured as GRPC Server
 
 ### Reference Documentation
 For further reference, please consider the following sections:
+* [Spring Boot Documentation](https://spring.io/projects/spring-boot)
+* [gRPC Basic Reference Guide](https://grpc.io/docs/tutorials/basic/java/)
+* [gRPC Java Implementation](https://github.com/grpc/grpc-java)
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.2.5.RELEASE/maven-plugin/)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.2.5.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
+### How to Run
+* Pull down repository.
+* Run command "mvn compile".
+* Allow your IDE to index new files.
+* Check service class to ensure imports have resolved.
+* Run from main method in GrpcServerApplication class.
+* In your browser, navigate to localhost:8080/returnData to ensure webserver is up and running.
 
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+### Notes
+* Current POM build cycle involves the creation of docker images from the build artifacts.
+* Running a maven install will also attempt to create a docker image, which will only be possible if a local docker daemon is present.
+* If you're having issues with key/cert authentication, change value in application.properties from:
+    * "grpc.server.security.enabled=true" to "grpc.server.security.enabled=false".
 

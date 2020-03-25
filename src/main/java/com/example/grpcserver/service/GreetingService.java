@@ -14,7 +14,8 @@ public class GreetingService extends GreeterGrpc.GreeterImplBase
     Logger logger = LoggerFactory.getLogger(GreetingService.class);
 
     @Override
-    public void sayHello(HelloRequest request, StreamObserver<HelloReply> responseObserver) {
+    public void sayHello(HelloRequest request, StreamObserver<HelloReply> responseObserver)
+    {
         logger.info("Receiving request with name {}", request.getName());
         String replyString = String.format("Hi there, %s !", request.getName());
         HelloReply reply = HelloReply.newBuilder().setReply(replyString).build();

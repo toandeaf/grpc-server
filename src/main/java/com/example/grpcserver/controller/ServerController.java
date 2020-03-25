@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/")
 @RestController
-public class ServerController {
-
-    @RequestMapping("/returnData")
+public class ServerController
+{
+    @RequestMapping("/ping")
     @ResponseBody
-    public ResponseEntity returnData(){
-
-        return new ResponseEntity("Data is here!", null, HttpStatus.ACCEPTED);
+    public ResponseEntity returnData()
+    {
+        return new ResponseEntity("Server is running!", null, HttpStatus.ACCEPTED);
     }
 }
